@@ -15,11 +15,10 @@ def convertjpg(file_path, jpgfile, savedir, width_new, height_new):
     img = img.convert('RGB')
     # 判断长宽比
     if width / height >= width_new / height_new:
-        new_img = img.resize((width_new, int(height * width_new / width)))
+        new_img = img.resize((width_new, int(height * width_new / width)), Image.BICUBIC)
     else:
-        new_img = img.resize((int(width * height_new / height), height_new))
+        new_img = img.resize((int(width * height_new / height), height_new), Image.BICUBIC)
     return new_img.save(os.path.join(savedir, jpgfile))
-
 
 '''循环遍历路径下图片文件，并修改其大小'''
 
