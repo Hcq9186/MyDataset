@@ -12,7 +12,6 @@ def copyFile(oldFile, newFile, queue=None):
 
 
 def copyFolder(old, new):
-    os.mkdir(new)
     files = os.listdir(old)
     pool = Pool(8)
     # 待拷贝文件数
@@ -32,13 +31,16 @@ def copyFolder(old, new):
     pool.join()
 
 line_list = []
-with open('./0_name.txt', encoding='utf-8') as file:
+with open('1_keyword.txt', encoding='utf-8') as file:
     line_list = [k.strip() for k in file.readlines()]  # 用 strip()移除末尾的空格
 def main():
-    new = './备份图片/'+old+'（原始）'
+    backup_name='未缩放备份图片'
+    if not os.path.exists(backup_name):
+        os.mkdir(backup_name)
+    new = backup_name+'/'+word+'（未缩放）'
     if os.path.exists(old):
         if os.path.isdir(old):
-            print(word+'文件夹备份中...')
+            print('第七步：'+word+'文件夹备份中...')
             print("------------------------------------------------------------")
             copyFolder(old, new)
             print("\n------------------------------------------------------------\n\n")
@@ -51,5 +53,5 @@ def main():
 
 if __name__ == '__main__':
     for word in line_list:
-        old = word
+        old = '标准处理图片/' + word
         main()

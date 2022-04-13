@@ -2,7 +2,7 @@ import os
 import hashlib
 
 line_list = []
-with open('./0_name.txt', encoding='utf-8') as file:
+with open('1_keyword.txt', encoding='utf-8') as file:
     line_list = [k.strip() for k in file.readlines()]  # 用 strip()移除末尾的空格
 filedir = '' # 设置为爬虫后的图片路径，必须自行修改
 
@@ -39,9 +39,9 @@ def delfile():
 
 if __name__ == '__main__':
     for word in line_list:
-        filedir = word
+        filedir = '标准处理图片/'+ word
         oldf = filecount(filedir)
-        print(word + '文件夹图片去重中...')
+        print('第三步：'+word + '文件夹图片去重中...')
         print("------------------------------------------------------------")
         print('去重前有', oldf, '个文件\n请稍等正在删除重复文件...')
         delfile()

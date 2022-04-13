@@ -10,7 +10,7 @@ sys.setrecursionlimit(3000)  # 将默认的递归深度修改为3000
 #-----------------------------------------------------------------#
 picNeedNum = 10  # 需要爬虫的图片总数，picNeedNum<=picMaxNum，看情况自行修改
 picMaxNum = 1000  # 最大爬虫图片数量，picNeedNum<=picMaxNum，看情况自行修改
-# 0_name.txt    用来写爬虫图片的关键词，一个单词写一行，要换行，必须自行修改
+# 1_keyword.txt    用来写爬虫图片的关键词，一个单词写一行，要换行，必须自行修改
 #-----------------------------------------------------------------#
 
 
@@ -106,7 +106,12 @@ if __name__ == '__main__':  # 主函数入口
     tm = picNeedNum
     numPicture = tm
     line_list = []
-    with open('./0_name.txt', encoding='utf-8') as file:
+
+    dataset_name = '标准处理图片'+r'\\'
+    if not os.path.exists(dataset_name):
+        os.makedirs(dataset_name)
+
+    with open('1_keyword.txt', encoding='utf-8') as file:
         line_list = [k.strip() for k in file.readlines()]  # 用 strip()移除末尾的空格
 
     for word in line_list:
@@ -114,11 +119,11 @@ if __name__ == '__main__':  # 主函数入口
         tot = Find(url, A)
         Recommend = recommend(url)  # 记录相关推荐
         print('经过检测%s类图片共有%d张' % (word, tot))
-        file = word
+        file = dataset_name+word
         y = os.path.exists(file)
         if y == 1:
             print('该文件已存在，请重新输入')
-            file = word + '文件夹2'
+            file = dataset_name+word + '（2）'
             os.mkdir(file)
         else:
             os.mkdir(file)
