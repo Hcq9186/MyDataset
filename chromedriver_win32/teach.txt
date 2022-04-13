@@ -1,0 +1,5 @@
+代码教程：
+https://blog.csdn.net/ai_faker/article/details/107919205
+
+Chrome驱动下载地址：
+http://chromedriver.storage.googleapis.com/index.html
