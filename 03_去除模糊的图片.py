@@ -3,13 +3,13 @@ from PIL import Image
 import glob
 
 line_list = []
-with open('1_keyword.txt', encoding='utf-8') as file:
+with open('01_keyword.txt', encoding='utf-8') as file:
     line_list = [k.strip() for k in file.readlines()]  # 用 strip()移除末尾的空格
 # dir1 = line_list[0]  # 图片路径，必须自行修改
 dir1=''
 
 size_list = []
-with open('0_img_size.txt', encoding='utf-8') as file:
+with open('00_img_size.txt', encoding='utf-8') as file:
     size_list = [k.strip() for k in file.readlines()]  # 用 strip()移除末尾的空格
 
 

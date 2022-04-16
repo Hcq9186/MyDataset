@@ -32,7 +32,7 @@ def modifyjpgSize(file_path, saveDir, width_new, height_new):
 # 读取目录
 if __name__ == '__main__':
     size_list = []
-    with open('0_img_size.txt', encoding='utf-8') as file:
+    with open('00_img_size.txt', encoding='utf-8') as file:
         size_list = [k.strip() for k in file.readlines()]  # 用 strip()移除末尾的空格
 
     need_width = int(size_list[0])  # 设置你想缩放的图片宽度的阈值，默认COCO图片格式，不用更改，VOC为500*400
@@ -40,7 +40,7 @@ if __name__ == '__main__':
 
     line_list = []
     file_path=''
-    with open('1_keyword.txt', encoding='utf-8') as file:
+    with open('01_keyword.txt', encoding='utf-8') as file:
         line_list = [k.strip() for k in file.readlines()]  # 用 strip()移除末尾的空格
     for word in line_list:
         file_path = word
