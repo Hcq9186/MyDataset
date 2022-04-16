@@ -15,4 +15,4 @@ def modify_jpg(path):
 
 if __name__ == '__main__':
     modify_jpg(os.path.dirname(os.path.abspath(__file__))+'/'+'标准处理图片')
-    print("第四步：图片转换已经完成")
+    print("第五步：图片转换已经完成")

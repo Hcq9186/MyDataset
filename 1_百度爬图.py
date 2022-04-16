@@ -6,6 +6,7 @@ import os
 import sys  # 导入sys模块
 sys.setrecursionlimit(3000)  # 将默认的递归深度修改为3000
 
+# TODO: set parameters
 # 可更改内容
 #-----------------------------------------------------------------#
 picNeedNum = 10  # 需要爬虫的图片总数，picNeedNum<=picMaxNum，看情况自行修改
@@ -90,7 +91,6 @@ def dowmloadPicture(html, keyword):
 
 
 if __name__ == '__main__':  # 主函数入口
-
     headers = {
         'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
         'Connection': 'keep-alive',
@@ -113,7 +113,9 @@ if __name__ == '__main__':  # 主函数入口
 
     with open('1_keyword.txt', encoding='utf-8') as file:
         line_list = [k.strip() for k in file.readlines()]  # 用 strip()移除末尾的空格
-
+    word=''
+    print('第一步：百度爬图' + word + '图片中...')
+    print("------------------------------------------")
     for word in line_list:
         url = 'https://image.baidu.com/search/flip?tn=baiduimage&ie=utf-8&word=' + word + '&pn='
         tot = Find(url, A)

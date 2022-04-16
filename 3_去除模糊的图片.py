@@ -12,11 +12,10 @@ size_list = []
 with open('0_img_size.txt', encoding='utf-8') as file:
     size_list = [k.strip() for k in file.readlines()]  # 用 strip()移除末尾的空格
 
-# 可更改内容
-#-----------------------------------------------------------------#
+
 need_width = int(size_list[0])   # 设置你想缩放的图片宽度的阈值，默认COCO图片格式，不用更改，VOC为500*400
 need_height = int(size_list[1])   # 设置你想缩放的图片宽度的阈值，默认COCO图片格式，不用更改，VOC为500*400
-#-----------------------------------------------------------------#
+
 
 for word in line_list:
     dir1 = '标准处理图片/'+ word
@@ -32,7 +31,7 @@ for word in line_list:
         if (width < need_width) and (height < need_height) or (height < need_width) and (width < need_height):
             os.remove(file)
             count+=1
-    print('第二步：'+word + '文件夹图片去除模糊中...')
+    print('第三步：'+word + '文件夹图片去除模糊中...')
     print("------------------------------------------")
     print("一共删除了"+str(count)+"张模糊图片")
     print("------------------------------------------\n\n")

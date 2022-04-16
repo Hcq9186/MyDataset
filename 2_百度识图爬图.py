@@ -6,6 +6,8 @@ import numpy as np
 from selenium import webdriver
 
 # TODO: set parameters
+# 可更改内容
+#-----------------------------------------------------------------#
 # These two parameters needs to be modified according to your actual situation.
 chrome_driver_path = 'chromedriver_win32/chromedriver.exe'
 base_url = ''
@@ -13,7 +15,7 @@ base_url = ''
 home_page = 'https://graph.baidu.com/pcpage/index?tpl_from=pc'
 seed_imgs_dir = '未缩放备份图片/桥梁损伤（未缩放）'
 save_dir = '桥梁损伤相似图片'
-
+#-----------------------------------------------------------------#
 
 def prepare_seed_imgs():
     seed_imgs_url_list = []
@@ -129,6 +131,8 @@ def download_search_images(url_list, cur_save_dir):
 
 
 if __name__ == "__main__":
+    print('第二步：百度识图爬图word文件夹图片中...')
+    print("------------------------------------------")
     browser = webdriver.Chrome(executable_path=chrome_driver_path)
     browser.set_page_load_timeout(30)
 

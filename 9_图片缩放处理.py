@@ -35,11 +35,9 @@ if __name__ == '__main__':
     with open('0_img_size.txt', encoding='utf-8') as file:
         size_list = [k.strip() for k in file.readlines()]  # 用 strip()移除末尾的空格
 
-    # 可更改内容
-    # -----------------------------------------------------------------#
     need_width = int(size_list[0])  # 设置你想缩放的图片宽度的阈值，默认COCO图片格式，不用更改，VOC为500*400
     need_height = int(size_list[1])  # 设置你想缩放的图片宽度的阈值，默认COCO图片格式，不用更改，VOC为500*400
-    # -----------------------------------------------------------------#
+
     line_list = []
     file_path=''
     with open('1_keyword.txt', encoding='utf-8') as file:
@@ -53,7 +51,7 @@ if __name__ == '__main__':
         for jpgfile in filelist:
             convertjpg(file_path, jpgfile, saveDir, need_width, need_height)
             count+=1
-        print('第八步：'+word + '文件夹图片缩放中...')
+        print('第九步：'+word + '文件夹图片缩放中...')
         print("------------------------------------------------------------")
         print(str(count)+"张图片缩放完成")
         print("------------------------------------------------------------\n\n")

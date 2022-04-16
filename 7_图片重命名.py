@@ -6,6 +6,7 @@ def rename():
     with open('1_keyword.txt', encoding='utf-8') as file:
         line_list = [k.strip() for k in file.readlines()]  # 用 strip()移除末尾的空格
 
+    # TODO: set parameters
     # 可更改内容
     # -----------------------------------------------------------------#
     startNumber = 1        # 从第几张图片开始，看情况自行修改,保证各文件夹中图片序号连续
@@ -40,7 +41,7 @@ def rename():
             os.rename(Olddir,Newdir)
             count+=1
             num=startNumber+num
-        print('第六步：'+word + '文件夹图片重命名中...')
+        print('第七步：'+word + '文件夹图片重命名中...')
         print("------------------------------------------------------------")
         print("一共修改了"+str(count)+"个文件")
         print("------------------------------------------------------------\n\n")

@@ -41,7 +41,7 @@ if __name__ == '__main__':
     for word in line_list:
         filedir = '标准处理图片/'+ word
         oldf = filecount(filedir)
-        print('第三步：'+word + '文件夹图片去重中...')
+        print('第四步：'+word + '文件夹图片去重中...')
         print("------------------------------------------------------------")
         print('去重前有', oldf, '个文件\n请稍等正在删除重复文件...')
         delfile()

@@ -40,7 +40,7 @@ def main():
     new = backup_name+'/'+word+'（未缩放）'
     if os.path.exists(old):
         if os.path.isdir(old):
-            print('第七步：'+word+'文件夹备份中...')
+            print('第八步：'+word+'文件夹备份中...')
             print("------------------------------------------------------------")
             copyFolder(old, new)
             print("\n------------------------------------------------------------\n\n")
