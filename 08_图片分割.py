@@ -31,8 +31,7 @@ def crop_image(image, patch_w, patch_h):
             img.save("dog-%d.jpg" % cnt)
     print("图片补丁裁剪结束，共有{}张补丁".format(cnt))
 
-def main():
-    image_path = "标准处理图片/混凝土桥梁/混凝土桥梁_4.jpg"
+def main(image_path):
     img = Image.open(image_path)
     # 查看图像形状
     print("原始图像形状{}".format(np.array(img).shape))
@@ -53,4 +52,8 @@ def main():
     crop_image(new_image, need_width, need_height)
 
 if __name__ == '__main__':
-    main()
+    # 可更改内容
+    # -----------------------------------------------------------------#
+    image_path = "标准处理图片/混凝土桥梁/混凝土桥梁_4.jpg" # 进行图片分割的图像路径
+    # -----------------------------------------------------------------#
+    main(image_path)
