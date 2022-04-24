@@ -30,9 +30,7 @@ def copyFolder(old, new):
 
     pool.join()
 
-line_list = []
-with open('01_keyword.txt', encoding='utf-8') as file:
-    line_list = [k.strip() for k in file.readlines()]  # 用 strip()移除末尾的空格
+
 def main():
     backup_name='未缩放备份图片'
     if not os.path.exists(backup_name):
@@ -52,6 +50,9 @@ def main():
 
 
 if __name__ == '__main__':
+    line_list = []
+    with open('01_keyword.txt', encoding='utf-8') as file:
+        line_list = [k.strip() for k in file.readlines()]  # 用 strip()移除末尾的空格
     for word in line_list:
         old = '标准处理图片/' + word
         main()

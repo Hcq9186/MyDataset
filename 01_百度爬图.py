@@ -9,7 +9,7 @@ sys.setrecursionlimit(3000)  # 将默认的递归深度修改为3000
 # TODO: set parameters
 # 可更改内容
 #-----------------------------------------------------------------#
-picNeedNum = 10  # 需要爬虫的图片总数，picNeedNum<=picMaxNum，看情况自行修改
+picNeedNum = 5  # 需要爬虫的图片总数，picNeedNum<=picMaxNum，看情况自行修改
 picMaxNum = 1000  # 最大爬虫图片数量，picNeedNum<=picMaxNum，看情况自行修改
 # 01_keyword.txt    用来写爬虫图片的关键词，一个单词写一行，要换行，必须自行修改
 #-----------------------------------------------------------------#
@@ -114,7 +114,7 @@ if __name__ == '__main__':  # 主函数入口
     with open('01_keyword.txt', encoding='utf-8') as file:
         line_list = [k.strip() for k in file.readlines()]  # 用 strip()移除末尾的空格
     word=''
-    print('第一步：百度爬图' + word + '图片中...')
+    print('第一步：百度爬图中...')
     print("------------------------------------------")
     for word in line_list:
         url = 'https://image.baidu.com/search/flip?tn=baiduimage&ie=utf-8&word=' + word + '&pn='
